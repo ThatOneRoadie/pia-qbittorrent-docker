@@ -20,12 +20,13 @@
 <details><summary>Click to show base components</summary><p>
 
 - [Ubuntu 26.04](https://ubuntu.com) for a base image
-- [Alpine 3.23.0](https://alpinelinux.org) for a base image
-- [OpenVPN 2.6.20] Alpine OpenVPN (https://pkgs.alpinelinux.org/package/v3.23/main/x86_64/openvpn) to tunnel to PIA nextgen servers
-- [OpenVPN 2.7.0] Ubuntu OpenVPN (https://packages.ubuntu.com/bionic/openvpn) to tunnel to PIA nextgen servers
-- [Wireguard 1.0.20250521] Alpine OpenVPN (https://pkgs.alpinelinux.org/package/v3.23/main/x86_64/wireguard-tools) to tunnel to PIA nextgen servers
-- [wireguard 1.0.20250521] Ubuntu wireguard (https://packages.ubuntu.com/bionic/wireguard-tools) to tunnel to PIA nextgen servers
-- [IPtables 1.8.11](https://packages.ubuntu.com/noble/iptables) enforces the container to communicate only through the VPN or with other containers in its virtual network (acts as a killswitch)
+- [Alpine 3.24](https://alpinelinux.org) for a base image
+- [OpenVPN 2.7.5] Alpine OpenVPN (https://pkgs.alpinelinux.org/package/v3.24/main/x86_64/openvpn) to tunnel to PIA nextgen servers
+- [OpenVPN 2.7.0] Ubuntu OpenVPN (https://packages.ubuntu.com/resolute/openvpn) to tunnel to PIA nextgen servers
+- [Wireguard 1.0.20260223] Alpine OpenVPN (https://pkgs.alpinelinux.org/package/v3.24/main/x86_64/wireguard-tools) to tunnel to PIA nextgen servers
+- [wireguard 1.0.20250521] Ubuntu wireguard (https://packages.ubuntu.com/resolute/wireguard-tools) to tunnel to PIA nextgen servers
+- [IPtables 1.8.13] Alpine iptables (https://pkgs.alpinelinux.org/package/v3.24/main/x86_64/iptables) enforces the container to communicate only through the VPN or with other containers in its virtual network (acts as a killswitch)
+- [IPtables 1.8.11] Ubuntu iptables (https://packages.ubuntu.com/resolute/iptables) enforces the container to communicate only through the VPN or with other containers in its virtual network (acts as a killswitch)
 
 </p></details>
 

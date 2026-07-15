@@ -1,5 +1,5 @@
 # Start with alpine
-FROM alpine:3.23
+FROM alpine:3.24
 
 ENV PIA_USERNAME= \
     PIA_PASSWORD= \
@@ -31,7 +31,7 @@ RUN apk add --no-cache -t .build-deps autoconf automake build-base cmake git lib
   curl -sSL --retry 5 https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.2.tar.gz | tar xzC /tmp && \
 	cd /tmp/*ninja* && \
   cmake -Wno-dev -B build \
-  	-D CMAKE_CXX_STANDARD=17 \
+  	-D CMAKE_CXX_STANDARD=20 \
   	-D CMAKE_INSTALL_PREFIX="/usr/local" && \
   cmake --build build -j $(nproc) && \
   cmake --install build && \
@@ -39,7 +39,7 @@ RUN apk add --no-cache -t .build-deps autoconf automake build-base cmake git lib
 	cd /tmp/*libtorrent* && \
   cmake -Wno-dev -G Ninja -B build \
     -D CMAKE_BUILD_TYPE="Release" \
-    -D CMAKE_CXX_STANDARD=17 \
+    -D CMAKE_CXX_STANDARD=20 \
     -D BOOST_INCLUDEDIR="/tmp/boost-1.91.0-1/" \
     -D CMAKE_INSTALL_LIBDIR="lib" \
     -D CMAKE_INSTALL_PREFIX="/usr/local" && \
@@ -50,7 +50,7 @@ RUN apk add --no-cache -t .build-deps autoconf automake build-base cmake git lib
   cmake -Wno-dev -G Ninja -B build \
     -D CMAKE_BUILD_TYPE="release" \
     -D GUI=OFF \
-    -D CMAKE_CXX_STANDARD=17 \
+    -D CMAKE_CXX_STANDARD=20 \
     -D BOOST_INCLUDEDIR="/tmp/boost-1.91.0-1/" \
     -D CMAKE_INSTALL_PREFIX="/usr/local" && \
   cmake --build build -j $(nproc) && \

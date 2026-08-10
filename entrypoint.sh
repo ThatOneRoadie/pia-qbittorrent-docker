@@ -623,13 +623,13 @@ for webui_interface in  $(echo $WEBUI_INTERFACES | sed "s/,/ /g"); do
   printf "DONE\n"
 done
 
-# Check if ADDITIONAL_OPEN_PORTS is set and not empty
-if [ -n "$ADDITIONAL_OPEN_PORTS" ]; then
+# Check if OPEN_ADDITIONAL_LOCAL_PORTS is set and not empty
+if [ -n "$OPEN_ADDITIONAL_LOCAL_PORTS" ]; then
 # Loop through each WebUI interface
-  printf " * Creating rules for Allowed LAN ports (for other containers):$ADDITIONAL_OPEN_PORTS\n"
+  printf " * Creating rules for Allowed LAN ports (for other containers):$OPEN_ADDITIONAL_LOCAL_PORTS\n"
   for webui_interface in  $(echo $WEBUI_INTERFACES | sed "s/,/ /g"); do
     # Loop through each Open Port in EnvVars, and convert commas to spaces for the loop:
-    for opened_port in  $(echo $ADDITIONAL_OPEN_PORTS | sed "s/,/ /g"); do
+    for opened_port in  $(echo $OPEN_ADDITIONAL_LOCAL_PORTS | sed "s/,/ /g"); do
       # Apply an INPUT rule (allow incoming traffic on WEBUI_Interface for the requested Opened port; Output is not necessary as related/established are already in the rules)
       printf "   * * Opening port $opened_port on interface: $webui_interface..."
       iptables -A INPUT -i "$webui_interface" -p tcp --dport "$opened_port" -j ACCEPT
